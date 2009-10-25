@@ -1,0 +1,24 @@
+TARGETNAME=dtrace
+TARGETTYPE=DRIVER
+
+
+
+KMDF_VERSION_MAJOR=1
+
+INF_NAME=dtrace
+
+NTTARGETFILES=$(OBJ_PATH)\$(O)\$(INF_NAME).inf
+
+
+
+MISCFILES=$(NTTARGETFILES)
+
+
+INCLUDES = .; $(INCLUDES)
+
+C_DEFINES= /D_KERNEL /D_XOPEN_SOURCE /D__EXTENSIONS__
+
+SOURCES= dtrace.c lockstat.c profile.c sdt_subr.c systrace.c
+
+
+
